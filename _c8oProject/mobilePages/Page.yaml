@@ -1,0 +1,394 @@
+↑isRoot: true
+comment: My First Page as root page
+preloadPriority: high
+scriptContent: 
+  - xmlizable: 
+    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+      →: |
+        '/*Begin_c8o_PageImport*/
+        /*End_c8o_PageImport*/
+        /*Begin_c8o_PageDeclaration*/
+        	/*End_c8o_PageDeclaration*/
+        /*Begin_c8o_PageConstructor*/
+        		/*End_c8o_PageConstructor*/
+        /*Begin_c8o_PageFunction*/
+        	public checkmatch(matcher, str) {
+        		const regex = new RegExp(matcher);
+        		//console.log("matcher: " + matcher);
+        		//console.log(str + " ==> " + regex.test(str));
+        		
+        		return regex.test(str);
+        	}
+        	/*End_c8o_PageFunction*/
+        '
+segment: path-to-xfirst
+title: First page
+↓Header [ngx.components.UIDynamicElement-1491634212350]: 
+  beanData: '{"ionBean":"Header"}'
+  comment: Page header
+  tagName: ion-header
+  ↓ToolBar [ngx.components.UIDynamicElement-1491634231108]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓ButtonSet1 [ngx.components.UIDynamicElement-1588171103814]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
+      tagName: ion-buttons
+      ↓BackButton [ngx.components.UIDynamicElement-1643993281257]: 
+        beanData: '{"ionBean":"BackButton"}'
+        tagName: ion-back-button
+      ↓MenuButton [ngx.components.UIDynamicElement-1588172846908]: 
+        beanData: '{"ionBean":"MenuButton"}'
+        tagName: ion-menu-button
+    ↓BarTitle [ngx.components.UIDynamicElement-1491634265317]: 
+      beanData: '{"ionBean":"BarTitle"}'
+      tagName: ion-title
+      ↓Text [ngx.components.UIText-1491634275121]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:Page
+    ↓ButtonSet2 [ngx.components.UIDynamicElement-1588170811054]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+      tagName: ion-buttons
+      ↓Button [ngx.components.UIDynamicElement-1588170817806]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: ion-button
+        ↓Icon [ngx.components.UIDynamicElement-1588170831166]: 
+          beanData: '{"ionBean":"Icon","IconName":"plain:ellipsis-vertical"}'
+          tagName: ion-icon
+↓Content [ngx.components.UIDynamicElement-1489674805352]: 
+  beanData: '{"ionBean":"Content"}'
+  comment: Page content
+  tagName: ion-content
+  ↓Form [ngx.components.UIForm-1738054045251]: 
+    identifier: formSample
+    ↓FormItemUser [ngx.components.UIDynamicElement-1738054045232]: 
+      beanData: '{"ionBean":"FormItem"}'
+      tagName: ion-item
+      ↓TextInput [ngx.components.UIDynamicElement-1738054045234]: 
+        beanData: |
+          '{
+           "ionBean": "Input",
+           "ControlName": "plain:user",
+           "Placeholder": "script:this.translate.instant(''user_label_text'')",
+           "Required": "plain:true"
+          }'
+        tagName: ion-input
+        ↓Div [ngx.components.UIDynamicElement-1738054794771]: 
+          beanData: '{"ionBean":"DivTag"}'
+          tagName: div
+          ↓slot [ngx.components.UIAttribute-1738054794774]: 
+            attrName: slot
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:label
+          ↓Text [ngx.components.UIText-1738054794777]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:Utilisateur
+          ↓TextItem [ngx.components.UIDynamicElement-1738054794780]: 
+            beanData: '{"ionBean":"TextItem","IonColor":"plain:danger"}'
+            tagName: ion-text
+            ↓Text [ngx.components.UIText-1738054794783]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: 'plain: *'
+    ↓FormItemPassword [ngx.components.UIDynamicElement-1738054045236]: 
+      beanData: '{"ionBean":"FormItem"}'
+      tagName: ion-item
+      ↓TextInput [ngx.components.UIDynamicElement-1738054045238]: 
+        beanData: |
+          '{
+           "ionBean": "Input",
+           "ControlName": "plain:password",
+           "DoubleBinding": "source:{\"filter\":\"Local\",\"project\":\"form_password_validation\",\"input\":\"\",\"model\":{\"data\":[{\"localObject\":\"local\"}],\"path\":\"?.password\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+           "Pattern": "plain:(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&].{7,}",
+           "Placeholder": "script:this.translate.instant(''mdp_label_text'')",
+           "Required": "plain:true",
+           "Type": "script:this.global.is_pwd_hidden !== undefined && this.global.is_pwd_hidden == true ? ''text'' : ''password''"
+          }'
+        tagName: ion-input
+        ↓Button [ngx.components.UIDynamicElement-1738055193869]: 
+          beanData: |
+            '{
+             "ionBean": "Button",
+             "IonFill": "plain:clear",
+             "IconSlot": "plain:end"
+            }'
+          tagName: ion-button
+          ↓Event [ngx.components.UIControlEvent-1738055193868]: 
+            ↓show_hide_pwd [ngx.components.UICustomAction-1738055463131]: 
+              actionValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                    →: |
+                      '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                      		page.global.is_pwd_hidden = !page.global.is_pwd_hidden;
+                      		console.log("page.global.is_pwd_hidden", page.global.is_pwd_hidden);
+                      		resolve();
+                      '
+          ↓Icon [ngx.components.UIDynamicElement-1738055246699]: 
+            beanData: |
+              '{
+               "ionBean": "Icon",
+               "IconName": "script:this.global.is_pwd_hidden !== undefined && this.global.is_pwd_hidden == true ? ''eye-off'' : ''eye''",
+               "IconSlot": "plain:icon-only"
+              }'
+            tagName: ion-icon
+        ↓Div [ngx.components.UIDynamicElement-1738054623066]: 
+          beanData: '{"ionBean":"DivTag"}'
+          tagName: div
+          ↓slot [ngx.components.UIAttribute-1738054633941]: 
+            attrName: slot
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:label
+          ↓Text [ngx.components.UIText-1738054659115]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:Mot de passe
+          ↓TextItem [ngx.components.UIDynamicElement-1738054745671]: 
+            beanData: '{"ionBean":"TextItem","IonColor":"plain:danger"}'
+            tagName: ion-text
+            ↓Text [ngx.components.UIText-1738054745670]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: 'plain: *'
+        ↓Event [ngx.components.UIControlEvent-1738060201361]: 
+          attrName: (ionFocus)
+          eventName: ionFocus
+          ↓SetLocal1 [ngx.components.UIDynamicAction-1738073537884]: 
+            beanData: |
+              '{
+               "ionBean": "SetLocalAction",
+               "Property": "plain:is_mdp_focus",
+               "Value": "script:true"
+              }'
+        ↓Event1 [ngx.components.UIControlEvent-1738073204747]: 
+          attrName: (ionBlur)
+          eventName: ionBlur
+          ↓SetLocal1 [ngx.components.UIDynamicAction-1738073542218]: 
+            beanData: |
+              '{
+               "ionBean": "SetLocalAction",
+               "Property": "plain:is_mdp_focus",
+               "Value": "script:false"
+              }'
+    ↓Div [ngx.components.UIDynamicElement-1738071954903]: 
+      beanData: '{"ionBean":"DivTag"}'
+      tagName: div
+      ↓Directive [ngx.components.UIControlDirective-1738058166142]: 
+        directiveName: If
+        directiveSource: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:checkmatch('.{8,}', this.local.password) === false
+        ↓Div [ngx.components.UIDynamicElement-1738065717603]: 
+          beanData: '{"ionBean":"DivTag"}'
+          tagName: div
+          ↓class [ngx.components.UIAttribute-1738065717621]: 
+            attrName: class
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:mdp-erreur
+          ↓TextItem [ngx.components.UIDynamicElement-1738058210937]: 
+            beanData: '{"ionBean":"TextItem"}'
+            tagName: ion-text
+            ↓Text [ngx.components.UIText-1738058210936]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:this.translate.instant('mdp_court_erreur')
+      ↓Directive1 [ngx.components.UIControlDirective-1738065508319]: 
+        directiveName: If
+        directiveSource: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:checkmatch('[a-z]', this.local.password) === false
+        ↓Div [ngx.components.UIDynamicElement-1738065605722]: 
+          beanData: '{"ionBean":"DivTag"}'
+          tagName: div
+          ↓class [ngx.components.UIAttribute-1738065605749]: 
+            attrName: class
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:mdp-erreur
+          ↓TextItem [ngx.components.UIDynamicElement-1738065605737]: 
+            beanData: '{"ionBean":"TextItem"}'
+            tagName: ion-text
+            ↓Text [ngx.components.UIText-1738065605740]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:this.translate.instant('mdp_min_erreur')
+      ↓Directive2 [ngx.components.UIControlDirective-1738070028494]: 
+        directiveName: If
+        directiveSource: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:checkmatch('[A-Z]', this.local.password) === false
+        ↓Div [ngx.components.UIDynamicElement-1738070028497]: 
+          beanData: '{"ionBean":"DivTag"}'
+          tagName: div
+          ↓class [ngx.components.UIAttribute-1738070028500]: 
+            attrName: class
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:mdp-erreur
+          ↓TextItem [ngx.components.UIDynamicElement-1738070028503]: 
+            beanData: '{"ionBean":"TextItem"}'
+            tagName: ion-text
+            ↓Text [ngx.components.UIText-1738070028506]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:this.translate.instant('mdp_maj_erreur')
+      ↓Directive3 [ngx.components.UIControlDirective-1738070117441]: 
+        directiveName: If
+        directiveSource: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:checkmatch('[0-9]', this.local.password) === false
+        ↓Div [ngx.components.UIDynamicElement-1738070117444]: 
+          beanData: '{"ionBean":"DivTag"}'
+          tagName: div
+          ↓class [ngx.components.UIAttribute-1738070117447]: 
+            attrName: class
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:mdp-erreur
+          ↓TextItem [ngx.components.UIDynamicElement-1738070117450]: 
+            beanData: '{"ionBean":"TextItem"}'
+            tagName: ion-text
+            ↓Text [ngx.components.UIText-1738070117453]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:this.translate.instant('mdp_int_erreur')
+      ↓Directive4 [ngx.components.UIControlDirective-1738070410991]: 
+        directiveName: If
+        directiveSource: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:checkmatch('[$@$!%*?&]', this.local.password) === false
+        ↓Div [ngx.components.UIDynamicElement-1738070410994]: 
+          beanData: '{"ionBean":"DivTag"}'
+          tagName: div
+          ↓class [ngx.components.UIAttribute-1738070410997]: 
+            attrName: class
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:mdp-erreur
+          ↓TextItem [ngx.components.UIDynamicElement-1738070411000]: 
+            beanData: '{"ionBean":"TextItem"}'
+            tagName: ion-text
+            ↓Text [ngx.components.UIText-1738070411003]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:this.translate.instant('mdp_char_erreur')
+      ↓ngClass [ngx.components.UIAttribute-1738072736967]: 
+        attrName: '[ngClass]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: 'script:formSample?.controls?.[''password'']?.valid ? null : ''div-wrapper'''
+      ↓ngClass1 [ngx.components.UIAttribute-1738073319008]: 
+        attrName: '[style.display]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: 'script:this.local.is_mdp_focus == true ? ''block'' : ''none'''
+    ↓SubmitButton [ngx.components.UIDynamicElement-1738054045240]: 
+      beanData: '{"ionBean":"SubmitButton","AutoDisable":"plain"}'
+      tagName: ion-button
+      ↓Text [ngx.components.UIText-1738054045242]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:Submit
+    ↓ResetButton [ngx.components.UIDynamicElement-1738054045244]: 
+      beanData: '{"ionBean":"ResetButton"}'
+      tagName: ion-button
+      ↓Text [ngx.components.UIText-1738054045246]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:Reset
+    ↓Event [ngx.components.UIControlEvent-1738054045248]: 
+      attrName: (ngSubmit)
+      eventName: onSubmit
+      ↓Alert [ngx.components.UIDynamicAction-1738054045250]: 
+        beanData: '{"ionBean":"AlertAction","message":"script:''formSample value is\\\\n'' + JSON.stringify(this?.formSample.value)"}'
+        isEnabled: false
+      ↓IfElse [ngx.components.UIDynamicIf-1738070701913]: 
+        beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Form\",\"project\":\"form_password_validation\",\"input\":\"\",\"model\":{\"data\":[{\"priority\":1738054045251,\"identifier\":\"formSample\"}],\"path\":\"?.valid\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+        ↓Toast [ngx.components.UIDynamicAction-1738070744933]: 
+          beanData: '{"ionBean":"ToastAction","message":"plain:LE FORMULAIRE EST VALIDE"}'
+        ↓Else_Handler [ngx.components.UIActionElseEvent-1738070733302]: 
+          ↓SetLocal1 [ngx.components.UIDynamicAction-1738073647068]: 
+            beanData: |
+              '{
+               "ionBean": "SetLocalAction",
+               "Property": "plain:is_mdp_focus",
+               "Value": "script:true"
+              }'
+          ↓Toast [ngx.components.UIDynamicAction-1738070763619]: 
+            beanData: '{"ionBean":"ToastAction","message":"plain:*** FORMULAIRE INVALIDE ***"}'
+↓Footer [ngx.components.UIDynamicElement-1491634242460]: 
+  beanData: '{"ionBean":"Footer"}'
+  comment: Page footer
+  tagName: ion-footer
+  ↓ToolBar [ngx.components.UIDynamicElement-1491634317538]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓ButtonSet [ngx.components.UIDynamicElement-1588170246138]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
+      tagName: ion-buttons
+      ↓Button1 [ngx.components.UIDynamicElement-1491634332730]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: ion-button
+        ↓Text [ngx.components.UIText-1491634340354]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:Action 1
+    ↓ButtonSet1 [ngx.components.UIDynamicElement-1588170269871]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+      tagName: ion-buttons
+      ↓Button2 [ngx.components.UIDynamicElement-1491634376874]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: ion-button
+        ↓Text [ngx.components.UIText-1491634383107]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:Action 2
+↓PageEvent [ngx.components.UIPageEvent-1738060011227]: 
+  ↓SetLocal [ngx.components.UIDynamicAction-1738060021543]: 
+    beanData: |
+      '{
+       "ionBean": "SetLocalAction",
+       "Property": "plain:password",
+       "Value": "script:''''"
+      }'
+  ↓SetLocal1 [ngx.components.UIDynamicAction-1738073465614]: 
+    beanData: |
+      '{
+       "ionBean": "SetLocalAction",
+       "Property": "plain:is_mdp_focus",
+       "Value": "script:false"
+      }'

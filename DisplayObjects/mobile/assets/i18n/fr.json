@@ -1,0 +1,19 @@
+{
+ "My_Menu": "Mon menu",
+ "First_page": "Première page",
+ "Page": "Page",
+ "Utilisateur": "Utilisateur",
+ "__": " *",
+ "Mot_de_passe": "Mot de passe",
+ "Submit": "Submit",
+ "Reset": "Reset",
+ "Action_1": "Action 1",
+ "Action_2": "Action 2",
+ "user_label_text": "Veuillez saisir un identifiant",
+ "mdp_label_text": "Veuillez saisir un mot de passe",
+ "mdp_court_erreur": "⛔ Le mot de passe doit contenir 8 caractères minimum",
+ "mdp_min_erreur": "⛔ Le mot de passe doit contenir au moins 1 minuscule",
+ "mdp_maj_erreur": "⛔ Le mot de passe doit contenir au moins 1 majuscule",
+ "mdp_int_erreur": "⛔ Le mot de passe doit contenir au moins 1 chiffre",
+ "mdp_char_erreur": "⛔ Le mot de passe doit contenir au moins 1 caractère spécial"
+}
