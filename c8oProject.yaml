@@ -1,6 +1,6 @@
 ↑convertigo: 8.0.0.m006
 ↓form_password_validation [core.Project]: 
-  comment: Convertigo NGX builder Project
+  comment: Password form validation Project
   contextTimeout: 59
   corsOrigin: =Origin
   httpSessionTimeout: 60
