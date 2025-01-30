@@ -7,6 +7,7 @@ scriptContent:
     - com.twinsoft.convertigo.beans.common.FormatedContent: 
       →: |
         '/*Begin_c8o_PageImport*/
+        //
         /*End_c8o_PageImport*/
         /*Begin_c8o_PageDeclaration*/
         	/*End_c8o_PageDeclaration*/
@@ -53,10 +54,65 @@ title: First page
       tagName: ion-buttons
       ↓Button [ngx.components.UIDynamicElement-1588170817806]: 
         beanData: '{"ionBean":"Button"}'
+        isEnabled: false
         tagName: ion-button
         ↓Icon [ngx.components.UIDynamicElement-1588170831166]: 
           beanData: '{"ionBean":"Icon","IconName":"plain:ellipsis-vertical"}'
           tagName: ion-icon
+      ↓SelectContainer [ngx.components.UIDynamicElement-1738084699803]: 
+        beanData: |
+          '{
+           "ionBean": "Select",
+           "ControlName": "plain:lang",
+           "Label": "plain:Languages",
+           "Value": "plain:fr"
+          }'
+        tagName: ion-select
+        ↓SelectOption [ngx.components.UIDynamicElement-1738084709327]: 
+          beanData: '{"ionBean":"SelectOption","Value":"plain:fr"}'
+          tagName: ion-select-option
+          ↓Text [ngx.components.UIText-1738084741538]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:Français
+        ↓SelectOption1 [ngx.components.UIDynamicElement-1738084715579]: 
+          beanData: '{"ionBean":"SelectOption","Value":"plain:en"}'
+          tagName: ion-select-option
+          ↓Text [ngx.components.UIText-1738084965880]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:English
+        ↓Event [ngx.components.UIControlEvent-1738085148518]: 
+          attrName: (ionChange)
+          eventName: ionChange
+          ↓change_language [ngx.components.UICustomAction-1738085160678]: 
+            actionValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                  →: |
+                    '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                    		let lng = vars.lng;
+                    		console.log("Switch language to: " + lng);
+                    		page.translate.setDefaultLang(lng);
+                    		page.translate.use(lng);
+                    		resolve();
+                    '
+            ↓lng [ngx.components.UIControlVariable-1738085273434]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: source:{"filter":"Action","project":"form_password_validation","input":"","model":{"data":[{"priority":1738085148518,"rootEvent":true,"pageLocals":false}],"path":"?.out?.detail?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+        ↓SelectOption2 [ngx.components.UIDynamicElement-1738085922090]: 
+          beanData: '{"ionBean":"SelectOption","Value":"plain:de"}'
+          tagName: ion-select-option
+          ↓Text [ngx.components.UIText-1738085922093]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:Deutsch
 ↓Content [ngx.components.UIDynamicElement-1489674805352]: 
   beanData: '{"ionBean":"Content"}'
   comment: Page content
@@ -88,7 +144,7 @@ title: First page
             textValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: plain:Utilisateur
+                - MobileSmartSourceType: script:this.translate.instant('user_label')
           ↓TextItem [ngx.components.UIDynamicElement-1738054794780]: 
             beanData: '{"ionBean":"TextItem","IonColor":"plain:danger"}'
             tagName: ion-text
@@ -153,7 +209,7 @@ title: First page
             textValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: plain:Mot de passe
+                - MobileSmartSourceType: script:this.translate.instant('mdp_label')
           ↓TextItem [ngx.components.UIDynamicElement-1738054745671]: 
             beanData: '{"ionBean":"TextItem","IonColor":"plain:danger"}'
             tagName: ion-text
@@ -312,6 +368,146 @@ title: First page
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
             - MobileSmartSourceType: 'script:this.local.is_mdp_focus == true ? ''block'' : ''none'''
+    ↓FormItemSelect [ngx.components.UIDynamicElement-1738081230999]: 
+      beanData: '{"ionBean":"FormItem"}'
+      tagName: ion-item
+      ↓SelectContainer [ngx.components.UIDynamicElement-1738081278406]: 
+        beanData: |
+          '{
+           "ionBean": "Select",
+           "ControlName": "plain:selector",
+           "Placeholder": "script:this.translate.instant(''select_label_text'')"
+          }'
+        tagName: ion-select
+        ↓Div [ngx.components.UIDynamicElement-1738081348587]: 
+          beanData: '{"ionBean":"DivTag"}'
+          tagName: div
+          ↓slot [ngx.components.UIAttribute-1738081348590]: 
+            attrName: slot
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:label
+          ↓Text [ngx.components.UIText-1738081348593]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.translate.instant('select_label')
+          ↓TextItem [ngx.components.UIDynamicElement-1738081348596]: 
+            beanData: '{"ionBean":"TextItem","IonColor":"plain:danger"}'
+            tagName: ion-text
+            ↓Text [ngx.components.UIText-1738081348599]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: 'plain: *'
+        ↓SelectOption [ngx.components.UIDynamicElement-1738081413662]: 
+          beanData: '{"ionBean":"SelectOption","Value":"plain:apple"}'
+          tagName: ion-select-option
+          ↓Text [ngx.components.UIText-1738081464486]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:select_apple_text
+          ↓Attr [ngx.components.UIAttribute-1738084426284]: 
+            attrName: 
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:translate
+        ↓SelectOption1 [ngx.components.UIDynamicElement-1738081439226]: 
+          beanData: '{"ionBean":"SelectOption","Value":"plain:banana"}'
+          tagName: ion-select-option
+          ↓Text [ngx.components.UIText-1738081491578]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:'select_banana_text' | translate
+        ↓SelectOption2 [ngx.components.UIDynamicElement-1738081441417]: 
+          beanData: '{"ionBean":"SelectOption","Value":"plain:orange"}'
+          tagName: ion-select-option
+          ↓Text [ngx.components.UIText-1738081493644]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:'select_orange_text' | translate
+        ↓required [ngx.components.UIAttribute-1738082597047]: 
+          attrName: 
+          attrValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:required
+    ↓FormItemCheckbox [ngx.components.UIDynamicElement-1738150365299]: 
+      beanData: '{"ionBean":"FormItem"}'
+      tagName: ion-item
+      ↓CheckBox [ngx.components.UIDynamicElement-1738150399960]: 
+        beanData: '{"ionBean":"CheckBox","ControlName":"plain:checkbox1"}'
+        tagName: ion-checkbox
+        ↓Text [ngx.components.UIText-1738150399959]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:checkbox label
+        ↓Span [ngx.components.UIDynamicElement-1738150893048]: 
+          beanData: '{"ionBean":"SpanTag"}'
+          tagName: span
+          ↓Text [ngx.components.UIText-1738150902105]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:*
+          ↓Style [ngx.components.UIStyle-1738150945674]: 
+            styleContent: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                  →: |
+                    '	color: red;
+                    '
+        ↓required [ngx.components.UIAttribute-1738150975211]: 
+          attrName: 
+          attrValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:required
+    ↓Div_error_checkbox [ngx.components.UIDynamicElement-1738167818260]: 
+      beanData: '{"ionBean":"DivTag"}'
+      tagName: div
+      ↓ngClass [ngx.components.UIAttribute-1738167913450]: 
+        attrName: class
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:div-wrapper
+      ↓ngClass1 [ngx.components.UIAttribute-1738170133478]: 
+        attrName: '[style.display]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: 'script:this.local.is_checkbox_focus == true ? ''block'' : ''none'''
+      ↓Directive [ngx.components.UIControlDirective-1738231648396]: 
+        directiveName: If
+        directiveSource: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:this.formSample?.form?.get('checkbox1')?.valid === false
+        ↓Div [ngx.components.UIDynamicElement-1738231648399]: 
+          beanData: '{"ionBean":"DivTag"}'
+          tagName: div
+          ↓class [ngx.components.UIAttribute-1738231648402]: 
+            attrName: class
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:mdp-erreur
+          ↓TextItem [ngx.components.UIDynamicElement-1738231648405]: 
+            beanData: '{"ionBean":"TextItem"}'
+            tagName: ion-text
+            ↓Text [ngx.components.UIText-1738231648408]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:this.translate.instant('check1_required_erreur')
     ↓SubmitButton [ngx.components.UIDynamicElement-1738054045240]: 
       beanData: '{"ionBean":"SubmitButton","AutoDisable":"plain"}'
       tagName: ion-button
@@ -328,12 +524,24 @@ title: First page
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
             - MobileSmartSourceType: plain:Reset
+      ↓Event [ngx.components.UIControlEvent-1738082944030]: 
+        ↓SetLocal1 [ngx.components.UIDynamicAction-1738082951138]: 
+          beanData: |
+            '{
+             "ionBean": "SetLocalAction",
+             "Property": "plain:is_mdp_focus",
+             "Value": "script:false"
+            }'
+        ↓SetLocal2 [ngx.components.UIDynamicAction-1738170234449]: 
+          beanData: |
+            '{
+             "ionBean": "SetLocalAction",
+             "Property": "plain:is_checkbox_focus",
+             "Value": "script:false"
+            }'
     ↓Event [ngx.components.UIControlEvent-1738054045248]: 
       attrName: (ngSubmit)
       eventName: onSubmit
-      ↓Alert [ngx.components.UIDynamicAction-1738054045250]: 
-        beanData: '{"ionBean":"AlertAction","message":"script:''formSample value is\\\\n'' + JSON.stringify(this?.formSample.value)"}'
-        isEnabled: false
       ↓IfElse [ngx.components.UIDynamicIf-1738070701913]: 
         beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Form\",\"project\":\"form_password_validation\",\"input\":\"\",\"model\":{\"data\":[{\"priority\":1738054045251,\"identifier\":\"formSample\"}],\"path\":\"?.valid\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
         ↓Toast [ngx.components.UIDynamicAction-1738070744933]: 
@@ -344,6 +552,13 @@ title: First page
               '{
                "ionBean": "SetLocalAction",
                "Property": "plain:is_mdp_focus",
+               "Value": "script:true"
+              }'
+          ↓SetLocal2 [ngx.components.UIDynamicAction-1738170195918]: 
+            beanData: |
+              '{
+               "ionBean": "SetLocalAction",
+               "Property": "plain:is_checkbox_focus",
                "Value": "script:true"
               }'
           ↓Toast [ngx.components.UIDynamicAction-1738070763619]: 
@@ -392,3 +607,48 @@ title: First page
        "Property": "plain:is_mdp_focus",
        "Value": "script:false"
       }'
+  ↓SetLocal2 [ngx.components.UIDynamicAction-1738170150694]: 
+    beanData: |
+      '{
+       "ionBean": "SetLocalAction",
+       "Property": "plain:is_checkbox_focus",
+       "Value": "script:false"
+      }'
+  ↓add_checkbox_validator [ngx.components.UICustomAction-1738157163290]: 
+    actionValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+            		const _form = page[vars.form_name];
+            		const _control = vars.control_name;
+            		//console.log("form", _form);
+            		
+            		//console.log("control: " + _control);
+            		_form.form.get(_control).setValidators([Validators.requiredTrue]);
+            		_form.form.get(_control).updateValueAndValidity();
+            		//console.log("valid? ", _form.valid);
+            		resolve();
+            '
+    page_ts_imports: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: Validators
+              - java.lang.String: 
+                - ↑value: '@angular/forms'
+    ↓form_name [ngx.components.UIControlVariable-1738158914214]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:formSample
+    ↓control_name [ngx.components.UIControlVariable-1738159296635]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:checkbox1
